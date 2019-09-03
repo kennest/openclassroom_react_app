@@ -14,3 +14,11 @@ export function getFilmWithSearchedText(text,page) {
 export function getImagefromApi(name){
     return "https://image.tmdb.org/t/p/w300" + name;
 }
+
+export function getFilmDetailsFromApi(id){
+ const url = "https://api.themoviedb.org/3/movie/"+id+"?api_key="+ API_KEY +"&language=fr";
+ console.log(url);
+ return fetch(url)
+     .then((response) => response.json())
+     .catch((error) => console.log(error));
+}
